@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -9,7 +10,8 @@ const Services = () => {
         </svg>
       ),
       title: "Speech Therapy",
-      description: "Comprehensive speech and language development programs tailored to each child's needs."
+      description: "Comprehensive speech and language development programs tailored to each child's needs.",
+      link: "/services/speech-therapy"
     },
     {
       icon: (
@@ -18,7 +20,8 @@ const Services = () => {
         </svg>
       ),
       title: "Occupational Therapy",
-      description: "Helping children develop fine motor skills, sensory processing, and daily living abilities."
+      description: "Helping children develop fine motor skills, sensory processing, and daily living abilities.",
+      link: "/services/occupational-therapy"
     },
     {
       icon: (
@@ -27,7 +30,8 @@ const Services = () => {
         </svg>
       ),
       title: "Multisensory Learning",
-      description: "Engaging multiple senses to enhance learning and retention for diverse learning styles."
+      description: "Engaging multiple senses to enhance learning and retention for diverse learning styles.",
+      link: "/services/multisensory-learning"
     },
     {
       icon: (
@@ -36,7 +40,8 @@ const Services = () => {
         </svg>
       ),
       title: "Shadow Teaching",
-      description: "One-on-one educational support to help children succeed in mainstream classrooms."
+      description: "One-on-one educational support to help children succeed in mainstream classrooms.",
+      link: "/services/shadow-teaching"
     },
     {
       icon: (
@@ -45,7 +50,8 @@ const Services = () => {
         </svg>
       ),
       title: "Parent Counseling",
-      description: "Supporting families with guidance, strategies, and emotional support throughout the journey."
+      description: "Supporting families with guidance, strategies, and emotional support throughout the journey.",
+      link: "/services/parent-counseling"
     },
     {
       icon: (
@@ -54,7 +60,8 @@ const Services = () => {
         </svg>
       ),
       title: "Early Developmental Assessment",
-      description: "Comprehensive evaluations to identify developmental needs and create personalized intervention plans."
+      description: "Comprehensive evaluations to identify developmental needs and create personalized intervention plans.",
+      link: "/services/assessment"
     }
   ];
 
@@ -73,22 +80,23 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
+            <Link 
               key={index}
-              className="group bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer"
+              to={service.link}
+              className="group bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer block"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
               <div className="text-engram-purple mb-6 group-hover:scale-110 transition-transform duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 font-heading">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 font-heading group-hover:text-engram-purple transition-colors duration-300">
                 {service.title}
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 
