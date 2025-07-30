@@ -16,6 +16,12 @@ import ParentCounselingPage from './pages/ParentCounselingPage';
 import AssessmentPage from './pages/AssessmentPage';
 import OccupationalTherapyPage from './pages/OccupationalTherapyPage';
 
+// Import additional pages
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
+
 function App() {
   useEffect(() => {
     AOS.refresh();
@@ -27,6 +33,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/services/speech-therapy" element={<SpeechTherapyPage />} />
           <Route path="/services/multisensory-learning" element={<MultisensoryLearningPage />} />
           <Route path="/services/shadow-teaching" element={<ShadowTeachingPage />} />
