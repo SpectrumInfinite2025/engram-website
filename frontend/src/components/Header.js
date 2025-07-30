@@ -17,12 +17,12 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '/about' },
     { name: 'Services', href: '/#services' },
-    { name: 'Blog', href: '#blog' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Impact', href: '/#impact' },
     { name: 'CSR', href: '/#csr' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const handleNavClick = (href) => {
